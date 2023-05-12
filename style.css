@@ -1,0 +1,171 @@
+body {
+	min-height: 100vh;
+	background-image: url("Assets/background.jpg");
+    margin: 0px;
+}
+
+* {
+	font-family: 'Sigmar', cursive;
+}
+
+main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	text-align: center;
+}
+
+h1,
+h2,
+.buttonStart {
+	color: crimson
+}
+
+.buttonStart {
+	width: 15rem;
+	height: 4rem;
+	font-size: 2rem;
+	cursor: pointer;
+	border-radius: 1rem;
+	background-color: antiquewhite;
+}
+
+.buttonStart:hover {
+	background-color: burlywood;	
+}
+
+
+.alphabet {
+	display: grid;
+	color: crimson;
+	background-color: transparent;
+	gap: 2px;
+    justify-content: center;
+}
+
+.alphabet > div {
+	background-color:blanchedalmond;
+	padding: 10px;
+	border: 1px solid black; 
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+
+.alphabet > div:hover{
+	border: 3px solid orange;
+}
+
+/* HEADER FADE IN */
+
+
+  .header {
+    color: crimson;
+    opacity: 0;
+    transition: opacity 6s ease-in-out;
+    visibility: hidden;
+  }
+
+  /* WELCOME SCREEN FLOW IN */
+  .welcomeScreen {
+    position: relative;
+    left: -100%; 
+    right: -100%; 
+    color: crimson;
+  }
+
+  @keyframes slideInFromLeft {
+    0% {
+      left: -100%; 
+    }
+    100% {
+      left: 0; 
+    }
+  }
+  
+  .welcomeScreen {
+    animation: slideInFromLeft 1s forwards; 
+    animation-delay: 1s;
+  }
+
+/* WIN / LOSE SCREENS */
+.loseScreen{
+    color: crimson;
+    font-size: 2rem;
+}
+
+.winScreen{
+    color: crimson;
+    font-size: 2rem;
+}
+
+.yesButton{
+    background-color:blanchedalmond;
+    color: crimson;
+    font-size: 2rem;
+    cursor: pointer;
+	margin-right: 1rem;
+	border-radius: 1rem;
+    width: 6rem;
+}
+
+.yesButton:hover{
+	background-color: burlywood;	
+}
+
+.noButton{
+    background-color:blanchedalmond;
+    color: crimson;
+    font-size: 2rem;
+    cursor: pointer;
+	margin-left:1rem;
+	border-radius: 1rem;
+    width: 6rem;
+}
+
+.noButton:hover{
+	background-color: burlywood;	
+}
+
+
+/* MOBILE VIEW */
+@media screen and (max-width: 1000px){
+	.alphabet {
+	grid-template-columns: repeat(7, 3rem);
+	grid-template-rows: repeat(4, 3rem);
+}
+
+	.lettersToGuess{
+		font-size: 2rem;
+
+	}
+}
+
+
+/* DESKTOP VIEW */
+@media screen and (min-width: 1000px){
+	.alphabet {
+	grid-template-columns: repeat(7, 4rem);
+	grid-template-rows: repeat(4, 4rem);
+}
+
+	.lettersToGuess{
+		font-size: 5rem;
+
+	}
+}
+
+
+
+
+/* VISIBILITY */
+.visible {
+	visibility: visible;
+}
+
+.hidden {
+	visibility: hidden;
+	position: absolute;
+}
